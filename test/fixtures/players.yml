@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  jersey_number: 
+  birthdate: 2013-07-22
+
+two:
+  name: MyString
+  jersey_number: 
+  birthdate: 2013-07-22

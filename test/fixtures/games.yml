@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  host_team_id: 
+  guest_team_id: 
+  played_on: 2013-07-22
+  host_team_score: 1
+  guest_team_score: 1
+
+two:
+  host_team_id: 
+  guest_team_id: 
+  played_on: 2013-07-22
+  host_team_score: 1
+  guest_team_score: 1

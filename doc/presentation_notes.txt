@@ -1,0 +1,66 @@
+### Get the full team roster
+
+SELECT players.name, teams.name
+FROM players 
+JOIN players_seasons ON players_seasons.player_id = players.id
+JOIN team_seasons ON team_seasons.id = players_seasons.team_season_id
+JOIN teams ON teams.id = team_seasons.team_id
+WHERE players.id < 6;
+
+### order by player name
+SELECT players.name, teams.name
+FROM players 
+JOIN players_seasons ON players_seasons.player_id = players.id
+JOIN team_seasons ON team_seasons.id = players_seasons.team_season_id
+JOIN teams ON teams.id = team_seasons.team_id
+WHERE players.id < 6
+ORDER BY players.name;
+
+### show year
+SELECT players.name, teams.name, team_seasons.year
+FROM players 
+JOIN players_seasons ON players_seasons.player_id = players.id
+JOIN team_seasons ON team_seasons.id = players_seasons.team_season_id
+JOIN teams ON teams.id = team_seasons.team_id
+WHERE players.id < 6
+ORDER BY players.name;
+
+### show year, sort on name/year
+SELECT players.name, teams.name, team_seasons.year
+FROM players 
+JOIN players_seasons ON players_seasons.player_id = players.id
+JOIN team_seasons ON team_seasons.id = players_seasons.team_season_id
+JOIN teams ON teams.id = team_seasons.team_id
+WHERE players.id < 6
+ORDER BY players.name, team_seasons.year;
+
+### just 2013
+SELECT players.name, teams.name, team_seasons.year
+FROM players 
+JOIN players_seasons ON players_seasons.player_id = players.id
+JOIN team_seasons ON team_seasons.id = players_seasons.team_season_id
+JOIN teams ON teams.id = team_seasons.team_id
+WHERE players.id < 6 AND team_seasons.year = '2013'
+ORDER BY players.name;
+
+
+## just spiders, 2013
+
+SELECT players.name, teams.name, team_seasons.year
+FROM players 
+JOIN players_seasons ON players_seasons.player_id = players.id
+JOIN team_seasons ON team_seasons.id = players_seasons.team_season_id
+JOIN teams ON teams.id = team_seasons.team_id
+WHERE players.id < 6 AND team_seasons.year = '2013' AND teams.name = 'Spiders'
+ORDER BY players.name;
+
+
+## all spiders, 2013
+
+SELECT players.name, teams.name, team_seasons.year
+FROM players 
+JOIN players_seasons ON players_seasons.player_id = players.id
+JOIN team_seasons ON team_seasons.id = players_seasons.team_season_id
+JOIN teams ON teams.id = team_seasons.team_id
+WHERE team_seasons.year = '2013' AND teams.name = 'Spiders'
+ORDER BY players.name;
